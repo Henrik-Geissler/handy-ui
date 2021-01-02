@@ -1,5 +1,11 @@
-#linter config
+#linter
 .eslintrc
 .eslintignore
 .prettierrc
 .prettierignore
+
+#ts
+tsconfig.json
+
+#yarn
+yarn.lock
