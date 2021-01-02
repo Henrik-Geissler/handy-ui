@@ -9,3 +9,9 @@ tsconfig.json
 
 #yarn
 yarn.lock
+yarn-debug.log*
+yarn-error.log*
+
+#git
+.gitignore
+.git
