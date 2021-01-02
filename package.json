@@ -2,7 +2,7 @@
   "name": "henreact",
   "version": "1.0.0",
   "description": "A Collection of useful React Components",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,10 +11,12 @@
     "url": "git+https://github.com/Henrik-Geissler/henreact.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Henrik Geißler",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Henrik-Geissler/henreact/issues"
   },
-  "homepage": "https://github.com/Henrik-Geissler/henreact#readme"
+  "homepage": "https://github.com/Henrik-Geissler/henreact#readme",
+  "types": "dist/index.d.ts",
+  "prepublish": "tsc"
 }
