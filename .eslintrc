@@ -225,6 +225,7 @@
 
     // DEACTIVATE UNUSED
     "react/prop-types": "off",
+    "react/require-default-props": "off",
     "no-multi-assign": "off",
     "no-param-reassign": "off",
 

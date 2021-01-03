@@ -1,15 +1,20 @@
 /**
  * Copyright (c) 2021, Henrik Geißler
  */
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, ReactNode, useEffect, useState } from 'react'
 
 import Resource from './Resource'
 
 interface ResourceContainerProps {
+  loadingIndicator?: ReactNode
   render: CallableFunction
   src: string
 }
-const ResourceContainer: FC<ResourceContainerProps> = ({ render, src }) => {
+const ResourceContainer: FC<ResourceContainerProps> = ({
+  loadingIndicator,
+  render,
+  src,
+}) => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(undefined)
   const [payload, setPayload] = useState([])
@@ -34,6 +39,7 @@ const ResourceContainer: FC<ResourceContainerProps> = ({ render, src }) => {
     <Resource
       error={error}
       loading={loading}
+      loadingIndicator={loadingIndicator}
       payload={payload}
       render={render}
     />

@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2021, Henrik Geißler
  */
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import ResourceContext from './ResourceContext'
 
@@ -12,15 +12,22 @@ interface ErrorProps {
 interface ResourceProps {
   error?: ErrorProps
   loading: boolean
+  loadingIndicator?: ReactNode
   payload: any
   render: CallableFunction
 }
-const Resource: FC<ResourceProps> = ({ error, loading, payload, render }) => {
+const Resource: FC<ResourceProps> = ({
+  error,
+  loading,
+  loadingIndicator,
+  payload,
+  render,
+}: ResourceProps) => {
   if (error) {
     return <>Error: {error.message}</>
   }
   if (loading) {
-    return <>Loading...</>
+    return <>{loadingIndicator || 'Loading...'}</>
   }
 
   return (
