@@ -3,19 +3,30 @@
  */
 import React, { FC } from 'react'
 
-import SpaceView from './SpaceView'
-
 interface SpaceProps {
-  h?: string | number
-  s?: string | number
-  w?: string | number
+  height: string
+  width: string
 }
-const Space: FC<SpaceProps> = ({ h, s, w }) => {
-  if (s) w = h = s
-  const realWidth = typeof w === 'number' ? `${w}` : w || '100%'
-  const realHeight = typeof h === 'number' ? `${h}` : h || '100%'
-
-  return <SpaceView height={realHeight} width={realWidth} />
+const Space: FC<SpaceProps> = ({ height, width }) => {
+  return (
+    <div
+      style={{
+        backgroundColor: 'transparent',
+        border: 'none',
+        height: `${height}`,
+        marginBottom: '0px',
+        marginLeft: '0px',
+        marginRight: '0px',
+        marginTop: '0px',
+        paddingBottom: '0px',
+        paddingLeft: '0px',
+        paddingRight: '0px',
+        paddingTop: '0px',
+        pointerEvents: 'none',
+        width: `${width}`,
+      }}
+    />
+  )
 }
 
 export default Space

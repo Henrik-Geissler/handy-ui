@@ -1,8 +1,12 @@
+#source
+src
+
 #linter
 .eslintrc
 .eslintignore
 .prettierrc
 .prettierignore
+src/copyright.ts
 
 #ts
 tsconfig.json
