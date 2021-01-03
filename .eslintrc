@@ -13,7 +13,7 @@
       "version": "detect"
     },
 
-    "json/sort-package-json": "standard",
+    "json/sort-package-json": "pro",
     "json/ignore-files": ["**/package-lock.json"],
     "json/json-with-comments-files": ["**/tsconfig.json", ".vscode/**"]
   },
@@ -33,6 +33,9 @@
     "xss",
     "woke",
     "json-format",
+"jason",
+"jsx-a11y",
+"better-styled-components",
 
     "array-func",
     "sonarjs",
@@ -61,6 +64,7 @@
     "canonical/react",
     "canonical/typescript",
     "plugin:typescript-sort-keys/recommended",
+"plugin:jsx-a11y/recommended",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
@@ -169,6 +173,7 @@
     "immutable/no-mutation": "warn",
     "type-graphql/invalid-nullable-output-type": "off",
     "type-graphql/invalid-nullable-input-type": "error",
+    "no-param-reassign": "warn",
 
     "eslint-comments/disable-enable-pair": "off",
     "eslint-comments/no-unused-disable": "warn",
@@ -227,11 +232,49 @@
     "react/prop-types": "off",
     "react/require-default-props": "off",
     "no-multi-assign": "off",
-    "no-param-reassign": "off",
 
     // DEACTIVATE DUPLICATES
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-unused-expressions": "off"
+//WIP
+"react/boolean-prop-naming":"error",
+"react/destructuring-assignment":"error",
+"react/display-name":"error",
+"react/forbid-dom-props":"error",
+"react/forbid-elements":"error",
+"react/forbid-prop-types":"error",
+"react/function-component-definition":"error",
+"react/jsx-child-element-spacing":"error",
+"react/jsx-closing-bracket-location":"error",
+"react/jsx-closing-tag-location":"error",
+"react/jsx-curly-brace-presence":"error",
+"react/jsx-filename-extension":"error",
+"react/jsx-max-depth":"error",
+"react/jsx-no-literals":"error",
+"react/jsx-no-script-url":"error",
+"react/jsx-no-useless-fragment":"error",
+"react/jsx-one-expression-per-line":"error",
+"react/jsx-props-no-spreading":"error",
+"react/jsx-sort-prop-types":"error",
+"react/jsx-space-before-closing":"error",
+"react/jsx-uses-react":"error",
+"react/jsx-uses-vars":"error",
+"react/jsx-wrap-multilines":"error",
+"react/no-adjacent-inline-elements":"error",
+"react/prefer-read-only-props":"error",
+"react/forbid-foreign-prop-types":"error",
+"react/require-optimization":"error",
+"better-styled-components/sort-declarations-alphabetically": "error",
+        "json/*": ["error", {"allowComments": true}]
+    }
+
+
+
+
+
+
+
+
 
     // BETTER PRETTIER
     //"newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
