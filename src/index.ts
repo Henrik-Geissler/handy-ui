@@ -1,1 +1,1 @@
-export { default as IfX } from './components/If/IfX'
+export { default as If } from './components/If/If'
