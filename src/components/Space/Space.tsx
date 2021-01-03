@@ -1,18 +1,21 @@
-import React from 'react'
+/**
+ * Copyright (c) 2021, Henrik Geißler
+ */
+import React, { FC } from 'react'
+
 import SpaceView from './SpaceView'
 
 interface SpaceProps {
-  w?: string | number
   h?: string | number
   s?: string | number
+  w?: string | number
 }
-
-const Space: React.FC<SpaceProps> = ({ w, h, s }) => {
+const Space: FC<SpaceProps> = ({ h, s, w }) => {
   if (s) w = h = s
-  let realWidth = typeof w == 'number' ? `${w}` : w || '100%'
-  let realHeight = typeof h == 'number' ? `${h}` : h || '100%'
+  const realWidth = typeof w === 'number' ? `${w}` : w || '100%'
+  const realHeight = typeof h === 'number' ? `${h}` : h || '100%'
 
-  return <SpaceView width={realWidth} height={realHeight} />
+  return <SpaceView height={realHeight} width={realWidth} />
 }
 
 export default Space

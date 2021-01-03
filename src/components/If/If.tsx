@@ -1,12 +1,15 @@
-import { FC, ReactNode } from 'react'
+/**
+ * Copyright (c) 2021, Henrik Geißler
+ */
+import React, { FC, ReactNode } from 'react'
 
 interface IfProps {
-  is: boolean
   children?: ReactNode
+  is: boolean
 }
-
-const If: FC<IfProps> = ({ is, children }: IfProps) => {
+const If: FC<IfProps> = ({ children, is }) => {
   if (!is || !children) return <></>
+
   return <>{children}</>
 }
 

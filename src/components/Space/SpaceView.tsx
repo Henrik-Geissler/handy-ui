@@ -1,29 +1,31 @@
-import React from 'react'
+/**
+ * Copyright (c) 2021, Henrik Geißler
+ */
+import React, { FC } from 'react'
 
 interface SpaceViewProps {
-  width: string
   height: string
+  width: string
 }
-
-const SpaceView: React.FC<SpaceViewProps> = ({ width, height }) => {
+const SpaceView: FC<SpaceViewProps> = ({ height, width }) => {
   return (
     <div
       style={{
-        width: `${width}`,
+        backgroundColor: 'transparent',
+        border: 'none',
         height: `${height}`,
-        marginTop: '0px',
         marginBottom: '0px',
         marginLeft: '0px',
         marginRight: '0px',
-        paddingTop: '0px',
+        marginTop: '0px',
         paddingBottom: '0px',
         paddingLeft: '0px',
         paddingRight: '0px',
-        border: 'none',
-        backgroundColor: 'transparent',
+        paddingTop: '0px',
         pointerEvents: 'none',
+        width: `${width}`,
       }}
-    ></div>
+    />
   )
 }
 

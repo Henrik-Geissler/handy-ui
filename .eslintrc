@@ -81,7 +81,7 @@
       "error",
       {
         "mustMatch": "Copyright \\(c\\)",
-        "templateFile": "api/secrets/copyright.ts"
+        "templateFile": "src/copyright.ts"
       }
     ],
     "alphabetize/_": "error",
@@ -107,7 +107,7 @@
       { "max": 60, "skipBlankLines": true, "skipComments": true }
     ],
     "max-depth": ["error", 4],
-    "complexity": ["error", 5],
+    "complexity": ["error", 6],
     "max-nested-callbacks": ["error", 2],
     "max-params": ["error", 4],
     "max-statements": ["error", 10],
@@ -123,7 +123,12 @@
         "min": 4,
         "max": 24,
         "exceptions": [
+          "h",
+          "s",
+          "w",
           "i",
+          "If",
+          "is",
           "id",
           "me",
           "up",
@@ -217,11 +222,24 @@
     "prefer-regex-literals": ["error", { "disallowRedundantWrapping": true }],
     "react/destructuring-assignment": ["error", "always"],
 
+    // DEACTIVATE UNUSED
+    "react/prop-types": "off",
+    "no-multi-assign": "off",
+    "no-param-reassign": "off",
+
     // DEACTIVATE DUPLICATES
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-unused-expressions": "off"
 
     // BETTER PRETTIER
     //"newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*/components/**/*.tsx"],
+      "rules": {
+        "filenames/match-regex": ["error", "^[A-Z]{1}[a-zA-Z]+$"]
+      }
+    }
+  ]
 }
