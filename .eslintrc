@@ -137,6 +137,7 @@
           "key",
           "req",
           "res",
+          "src",
           "url"
         ]
       }
@@ -236,7 +237,7 @@
   },
   "overrides": [
     {
-      "files": ["*/components/**/*.tsx"],
+      "files": ["*/components/**/*.tsx", "*/components/**/*Context.ts"],
       "rules": {
         "filenames/match-regex": ["error", "^[A-Z]{1}[a-zA-Z]+$"]
       }
