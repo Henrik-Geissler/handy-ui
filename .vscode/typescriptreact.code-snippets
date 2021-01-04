@@ -1,0 +1,26 @@
+{
+  "Typescript React Function Component": {
+    "prefix": "rc",
+    "body": [
+      "import React, { FC } from 'react'",
+      "",
+      "interface ${TM_FILENAME_BASE}Props {",
+      "  $0",
+      "}",
+      "const $TM_FILENAME_BASE: FC<${TM_FILENAME_BASE}Props> = ({",
+      "  $2",
+      "}) => {",
+      "  $3",
+      "    return (",
+      "      <>",
+      "        $1",
+      "      </>",
+      "    );",
+      "}",
+      "",
+      "export default $TM_FILENAME_BASE;",
+      ""
+    ],
+    "description": "Typescript React Function Component"
+  }
+}
