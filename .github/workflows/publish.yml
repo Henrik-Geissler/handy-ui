@@ -1,7 +1,34 @@
 name: Test, Publish & Release
 on: [push]
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn
+      - run: yarn latest
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "CI: Upgrade"
+          git add --all
+          git diff-index --quiet HEAD || git commit -m "ci(upgrade):  ${{github.event.commits[0].message}}"
+      - run: yarn lint
+      - run: yarn format
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "CI: Lint"
+          git add --all
+          git diff-index --quiet HEAD || git commit -m "ci(lint):  ${{github.event.commits[0].message}}"
+      - run: yarn patch
+
   test:
+    needs: lint
     runs-on: ubuntu-latest
     strategy:
       matrix:

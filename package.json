@@ -4,11 +4,14 @@
   "description": "A Collection of useful React Components",
   "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "latest": "yarn upgrade --latest",
     "build": "rm -rf dist && tsc",
+    "format": "./node_modules/.bin/prettier --write \".\"",
+    "latest": "yarn upgrade --latest",
+    "lint": "./node_modules/.bin/eslint --fix \".\"; exit 0",
+    "patch": "yarn version --patch",
+    "postversion": "git push && git push --tags",
     "prepublish": "yarn run build",
-    "postversion": "git push && git push --tags"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
