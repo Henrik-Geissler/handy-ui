@@ -1,2 +1,2 @@
 fixes:
-  - 'dist::src'
+  - '/home/runner/work/handy-ui/handy-ui/dist/::/src/'

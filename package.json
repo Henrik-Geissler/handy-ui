@@ -10,7 +10,8 @@
     "lint": "./node_modules/.bin/eslint --fix \".\"; exit 0",
     "patch": "yarn version --patch",
     "prepublish": "yarn run build",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch ./src"
   },
   "repository": {
     "type": "git",
