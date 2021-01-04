@@ -1,3 +1,0 @@
-fixes:
-  - 'dist/*.js::src/*.ts'
-  - 'dist/*.jsx::src/*.tsx'
