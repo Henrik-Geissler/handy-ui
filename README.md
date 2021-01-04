@@ -11,6 +11,7 @@ A Collection of useful React Components
 [![License](https://img.shields.io/github/license/Henrik-Geissler/handy-ui)](https://github.com/Henrik-Geissler/handy-ui)
 
 Look at some Examples, or directly go to the Documentation.
+
 ## Installation
 
 ```
@@ -20,4 +21,3 @@ yarn add handy-ui
 ## Usage
 
 handy-ui is a Collection of Styled Components. Create a rich Mobile First User Interface with ease. Incredibly simplistic and highly customisable.
-
