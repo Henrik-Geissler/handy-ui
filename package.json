@@ -1,6 +1,6 @@
 {
   "name": "handy-ui",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A Collection of useful React Components",
   "main": "dist/main.js",
   "scripts": {
