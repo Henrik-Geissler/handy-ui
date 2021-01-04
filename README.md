@@ -9,3 +9,15 @@ A Collection of useful React Components
 ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/Henrik-Geissler/handy-ui/react)
 [![size](https://img.shields.io/bundlephobia/min/handy-ui)](https://www.npmjs.com/package/handy-ui)
 [![License](https://img.shields.io/github/license/Henrik-Geissler/handy-ui)](https://github.com/Henrik-Geissler/handy-ui)
+
+Look at some Examples, or directly go to the Documentation.
+## Installation
+
+```
+yarn add handy-ui
+```
+
+## Usage
+
+handy-ui is a Collection of Styled Components. Create a rich Mobile First User Interface with ease. Incredibly simplistic and highly customisable.
+
