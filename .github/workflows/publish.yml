@@ -17,14 +17,14 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "CI: Upgrade"
           git add --all
-          git diff-index --quiet HEAD || git commit -m "ci(upgrade):  ${{github.event.commits[0].message}}"
+          git diff-index --quiet HEAD || git commit -m "ci(upgrade): Upgrade dependencies"
       - run: yarn lint
       - run: yarn format
       - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "CI: Lint"
           git add --all
-          git diff-index --quiet HEAD || git commit -m "ci(lint):  ${{github.event.commits[0].message}}"
+          git diff-index --quiet HEAD || git commit -m "ci(lint): Lint & Format"
       - run: yarn patch
 
   test:

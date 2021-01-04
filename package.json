@@ -9,7 +9,7 @@
     "latest": "yarn upgrade --latest",
     "lint": "./node_modules/.bin/eslint --fix \".\"; exit 0",
     "patch": "yarn version --patch",
-    "postversion": "git push && git push --tags",
+    "postversion": "git push origin HEAD:master && git push origin HEAD:master --tags",
     "prepublish": "yarn run build",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
@@ -26,7 +26,7 @@
   "homepage": "https://github.com/Henrik-Geissler/handy-ui#readme",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "react": "^17.0.1"
+    "react": "^16.0.1"
   },
   "devDependencies": {
     "@getify/eslint-plugin-proper-arrows": "^10.0.0",
