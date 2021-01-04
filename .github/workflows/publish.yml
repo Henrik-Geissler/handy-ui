@@ -48,7 +48,6 @@ jobs:
       - run: yarn ci:build
       - run: yarn ci:test
       - run: bash <(curl -s https://codecov.io/bash) -X gcov -Z
-      #- run: ./node_modules/.bin/codecov -t ${{secrets.CODECOV_TOKEN}} --disable=gcov
   publish:
     needs: test
     runs-on: ubuntu-latest
