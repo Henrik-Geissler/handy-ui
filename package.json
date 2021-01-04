@@ -5,13 +5,18 @@
   "main": "dist/main.js",
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "format": "./node_modules/.bin/prettier --write \".\"",
-    "latest": "yarn upgrade --latest",
-    "lint": "./node_modules/.bin/eslint --fix \".\"; exit 0",
-    "patch": "yarn version --patch",
+    "ci:build": "tsc",
+    "ci:format": "./node_modules/.bin/prettier --write \".\"",
+    "ci:latest": "yarn upgrade --latest",
+    "ci:lint": "./node_modules/.bin/eslint --fix \".\"; exit 0",
+    "ci:patch": "yarn version --patch",
+    "ci:test": "jest --coverage",
+    "dev": "yarn watch",
     "prepublish": "yarn run build",
-    "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch ./src"
+    "test": "jest",
+    "watch": "mkdir \"`pwd`\"/secrets; echo \"cd \"`pwd`\";yarn watch:build;exit;\" > \"`pwd`\"/secrets/watchBuild.command; chmod +x \"`pwd`\"/secrets/watchBuild.command; echo \"cd \"`pwd`\";yarn watch:test;exit;\" > \"`pwd`\"/secrets/watchTest.command; chmod +x \"`pwd`\"/secrets/watchTest.command; open \"`pwd`\"/secrets/watchTest.command; open \"`pwd`\"/secrets/watchBuild.command;",
+    "watch:build": "tsc -w",
+    "watch:test": "jest --coverage --watch ./src"
   },
   "repository": {
     "type": "git",

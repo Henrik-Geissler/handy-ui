@@ -12,20 +12,20 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn
-      - run: yarn latest
+      - run: yarn ci:latest
       - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "CI: Upgrade"
           git add --all
           git diff-index --quiet HEAD || git commit -m "ci(upgrade): Upgrade dependencies"
-      - run: yarn lint
-      - run: yarn format
+      - run: yarn ci:lint
+      - run: yarn ci:format
       - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "CI: Lint"
           git add --all
           git diff-index --quiet HEAD || git commit -m "ci(lint): Lint & Format"
-      - run: yarn patch
+      - run: yarn ci:patch
       - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "CI: Patch"
@@ -45,9 +45,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn
-      - run: yarn build
-      - run: yarn test
-      - run: bash <(curl -s https://codecov.io/bash) -X gcov -d -Z
+      - run: yarn ci:build
+      - run: yarn ci:test
+      - run: bash <(curl -s https://codecov.io/bash) -X gcov -Z
       #- run: ./node_modules/.bin/codecov -t ${{secrets.CODECOV_TOKEN}} --disable=gcov
   publish:
     needs: test

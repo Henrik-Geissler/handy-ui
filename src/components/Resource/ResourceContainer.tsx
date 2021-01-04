@@ -36,6 +36,7 @@ const ResourceContainer: FC<ResourceContainerProps> = ({
         }
       )
  */
+
     return () => {}
   }, [src])
 
