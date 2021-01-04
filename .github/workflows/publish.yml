@@ -1,7 +1,7 @@
 name: Test, Publish & Release
 on: [push]
 jobs:
-  lint:
+  upgrade-lint-patch:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -34,7 +34,7 @@ jobs:
           git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:main
           git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:main --tags
   test:
-    needs: lint
+    needs: upgrade-lint-patch
     runs-on: ubuntu-latest
     strategy:
       matrix:

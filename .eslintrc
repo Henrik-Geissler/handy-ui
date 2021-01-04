@@ -33,13 +33,15 @@
     "xss",
     "woke",
     "json-format",
-    //"json",
     "jsx-a11y",
     "better-styled-components",
 
     "array-func",
     "sonarjs",
     "immutable"
+
+    // DUPLICATES
+    //"json",
     //"react-hooks",
     //"no-loops",
     //"promise",
@@ -233,10 +235,12 @@
     "react/prop-types": "off",
     "react/require-default-props": "off",
     "no-multi-assign": "off",
+    "react/jsx-no-literals": "off",
 
     // DEACTIVATE DUPLICATES
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-unused-expressions": "off",
+
     //WIP
     "react/boolean-prop-naming": "error",
     "react/display-name": "error",
@@ -253,7 +257,6 @@
     "react/jsx-curly-brace-presence": "error",
     "react/jsx-filename-extension": "error",
     "react/jsx-max-depth": "error",
-    "react/jsx-no-literals": "off",
     "react/jsx-no-script-url": "error",
     "react/jsx-no-useless-fragment": "error",
     "react/jsx-one-expression-per-line": "error",
@@ -267,7 +270,6 @@
     "react/forbid-foreign-prop-types": "error",
     "react/require-optimization": "error",
     "better-styled-components/sort-declarations-alphabetically": "error"
-    //"json/*": ["error", { "allowComments": true }]
 
     // BETTER PRETTIER
     //"newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
@@ -277,12 +279,6 @@
       "files": ["*/components/**/*.tsx", "*/components/**/*Context.ts"],
       "rules": {
         "filenames/match-regex": ["error", "^[A-Z]{1}[a-zA-Z]+$"]
-      }
-    },
-    {
-      "files": ["package.json"],
-      "rules": {
-        "json/*": ["error", { "allowComments": false }]
       }
     }
   ]
