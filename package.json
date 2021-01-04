@@ -9,7 +9,7 @@
     "latest": "yarn upgrade --latest",
     "lint": "./node_modules/.bin/eslint --fix \".\"; exit 0",
     "patch": "yarn version --patch",
-    "postversion": "git push origin HEAD:master && git push origin HEAD:master --tags",
+    "postversion": "git config --local user.email \"action@github.com\" && git config --local user.name \"CI: Version\" && git push origin HEAD:master && git push origin HEAD:master --tags",
     "prepublish": "yarn run build",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
