@@ -2,7 +2,9 @@
   "name": "handy-ui",
   "version": "1.0.23",
   "description": "A Collection of useful React Components",
-  "main": "dist/main.js",
+  "main": "dist/main.js","publishConfig": {
+  "registry":"https://npm.pkg.github.com"
+},
   "scripts": {
     "build": "rm -rf dist && tsc",
     "ci:build": "tsc",
