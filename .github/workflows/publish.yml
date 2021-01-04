@@ -26,7 +26,13 @@ jobs:
           git add --all
           git diff-index --quiet HEAD || git commit -m "ci(lint): Lint & Format"
       - run: yarn patch
-
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "CI: Patch"
+          git add --all
+          git diff-index --quiet HEAD || git commit -m "ci(patch): Version"
+          git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:master
+          git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:master --tags
   test:
     needs: lint
     runs-on: ubuntu-latest
