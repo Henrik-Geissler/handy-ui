@@ -2,9 +2,17 @@
   "name": "handy-ui",
   "version": "1.0.24",
   "description": "A Collection of useful React Components",
-  "main": "dist/main.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+  "author": "Henrik Geißler",
+  "license": "MIT",
+  "homepage": "https://github.com/Henrik-Geissler/handy-ui#readme",
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Henrik-Geissler/handy-ui.git"
+  },
+  "keywords": ["react","material-ui","ui"],
+  "bugs": {
+    "url": "https://github.com/Henrik-Geissler/handy-ui/issues"
   },
   "scripts": {
     "build": "rm -rf dist && tsc",
@@ -20,19 +28,11 @@
     "watch": "mkdir \"`pwd`\"/secrets; echo \"cd \"`pwd`\";yarn watch:build;exit;\" > \"`pwd`\"/secrets/watchBuild.command; chmod +x \"`pwd`\"/secrets/watchBuild.command; echo \"cd \"`pwd`\";yarn watch:test;exit;\" > \"`pwd`\"/secrets/watchTest.command; chmod +x \"`pwd`\"/secrets/watchTest.command; open \"`pwd`\"/secrets/watchTest.command; open \"`pwd`\"/secrets/watchBuild.command;",
     "watch:build": "tsc -w",
     "watch:test": "jest --coverage --watch ./src"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Henrik-Geissler/handy-ui.git"
-  },
-  "keywords": [],
-  "author": "Henrik Geißler",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Henrik-Geissler/handy-ui/issues"
-  },
-  "homepage": "https://github.com/Henrik-Geissler/handy-ui#readme",
+  },"main": "dist/main.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "dependencies": {
     "react": "^17.0.1"
   },
@@ -86,8 +86,5 @@
     "react-dom": "^17.0.1",
     "ts-jest": "^26.4.4",
     "typescript": "^4.1.3"
-  },
-  "files": [
-    "/dist"
-  ]
+  }
 }
