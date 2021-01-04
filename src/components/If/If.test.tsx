@@ -13,5 +13,6 @@ test('CheckboxWithLabel changes the text after click', () => {
   // checkbox.find('input').simulate('change')
   // expect(checkbox.text()).toEqual('On')
   // Snapshot demo
+  console.log(component)
   expect(shallow).toMatchSnapshot()
 })

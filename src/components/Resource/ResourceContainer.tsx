@@ -19,6 +19,9 @@ const ResourceContainer: FC<ResourceContainerProps> = ({
   const [fetchError, setFetchError] = useState(undefined)
   const [fetchPayload, setFetchPayload] = useState([])
   useEffect(() => {
+    setFetchLoading(true)
+    setFetchError(undefined)
+    setFetchPayload([])
     /**
     fetch(src)
       .then(response => response.json())
