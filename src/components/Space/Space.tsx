@@ -7,14 +7,14 @@ interface SpaceProps {
   height: string
   width: string
 }
+
 const Space: FC<SpaceProps> = ({ height, width }) => {
   return (
     <div
       style={{
         backgroundColor: 'transparent',
         border: 'none',
-        height: `${height}`,
-        marginBottom: '0px',
+        height: `${height}`,marginBottom: '0px',
         marginLeft: '0px',
         marginRight: '0px',
         marginTop: '0px',
