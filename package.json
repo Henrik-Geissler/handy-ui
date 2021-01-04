@@ -5,12 +5,15 @@
   "author": "Henrik Geißler",
   "license": "MIT",
   "homepage": "https://github.com/Henrik-Geissler/handy-ui#readme",
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Henrik-Geissler/handy-ui.git"
   },
-  "keywords": ["react","material-ui","ui"],
+  "keywords": [
+    "react",
+    "material-ui",
+    "ui"
+  ],
   "bugs": {
     "url": "https://github.com/Henrik-Geissler/handy-ui/issues"
   },
@@ -28,7 +31,8 @@
     "watch": "mkdir \"`pwd`\"/secrets; echo \"cd \"`pwd`\";yarn watch:build;exit;\" > \"`pwd`\"/secrets/watchBuild.command; chmod +x \"`pwd`\"/secrets/watchBuild.command; echo \"cd \"`pwd`\";yarn watch:test;exit;\" > \"`pwd`\"/secrets/watchTest.command; chmod +x \"`pwd`\"/secrets/watchTest.command; open \"`pwd`\"/secrets/watchTest.command; open \"`pwd`\"/secrets/watchBuild.command;",
     "watch:build": "tsc -w",
     "watch:test": "jest --coverage --watch ./src"
-  },"main": "dist/main.js",
+  },
+  "main": "dist/main.js",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
