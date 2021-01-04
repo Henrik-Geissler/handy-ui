@@ -10,7 +10,7 @@
     "lint": "./node_modules/.bin/eslint --fix \".\"; exit 0",
     "patch": "yarn version --patch",
     "prepublish": "yarn run build",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -29,10 +29,15 @@
   },
   "devDependencies": {
     "@getify/eslint-plugin-proper-arrows": "^10.0.0",
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.19",
     "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
     "eslint": "^7.14.0",
     "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-config-canonical": "^25.0.0",

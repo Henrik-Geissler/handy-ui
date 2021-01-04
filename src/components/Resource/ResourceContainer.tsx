@@ -19,6 +19,7 @@ const ResourceContainer: FC<ResourceContainerProps> = ({
   const [fetchError, setFetchError] = useState(undefined)
   const [fetchPayload, setFetchPayload] = useState([])
   useEffect(() => {
+    /**
     fetch(src)
       .then(response => response.json())
       .then(
@@ -31,7 +32,7 @@ const ResourceContainer: FC<ResourceContainerProps> = ({
           setFetchError(error)
         }
       )
-
+ */
     return () => {}
   }, [src])
 

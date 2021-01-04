@@ -1,0 +1,12 @@
+{
+  "roots": ["<rootDir>/dist"],
+  "verbose": true,
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "testEnvironment": "node",
+  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "setupFilesAfterEnv": ["<rootDir>/src/setupEnzyme.ts"]
+}

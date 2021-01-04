@@ -129,6 +129,7 @@
         "min": 4,
         "max": 24,
         "exceptions": [
+          "$",
           "h",
           "s",
           "w",
@@ -279,6 +280,13 @@
       "files": ["*/components/**/*.tsx", "*/components/**/*Context.ts"],
       "rules": {
         "filenames/match-regex": ["error", "^[A-Z]{1}[a-zA-Z]+$"]
+      }
+    },
+    {
+      "files": ["*/components/**/*.test.tsx", "*/components/**/*.test.ts"],
+      "rules": {
+        "filenames/match-regex": ["error", "^[A-Z]{1}[a-zA-Z]+.test$"],
+        "toplevel/no-toplevel-side-effect": "off"
       }
     }
   ]

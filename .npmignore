@@ -1,0 +1,4 @@
+
+#UNIT TESTS
+**/*.test.*
+**/*.spec.*
