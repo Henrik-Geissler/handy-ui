@@ -15,20 +15,20 @@ const ResourceContainer: FC<ResourceContainerProps> = ({
   render,
   src,
 }) => {
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(undefined)
-  const [payload, setPayload] = useState([])
+  const [fetchLoading, setFetchLoading] = useState(true)
+  const [fetchError, setFetchError] = useState(undefined)
+  const [fetchPayload, setFetchPayload] = useState([])
   useEffect(() => {
     fetch(src)
       .then(response => response.json())
       .then(
         result => {
-          setLoading(false)
-          setPayload(result)
+          setFetchLoading(false)
+          setFetchPayload(result)
         },
         error => {
-          setLoading(false)
-          setError(error)
+          setFetchLoading(false)
+          setFetchError(error)
         }
       )
 
@@ -37,10 +37,10 @@ const ResourceContainer: FC<ResourceContainerProps> = ({
 
   return (
     <Resource
-      error={error}
-      loading={loading}
+      error={fetchError}
+      loading={fetchLoading}
       loadingIndicator={loadingIndicator}
-      payload={payload}
+      payload={fetchPayload}
       render={render}
     />
   )

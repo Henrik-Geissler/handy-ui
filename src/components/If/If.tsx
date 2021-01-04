@@ -8,7 +8,7 @@ interface IfProps {
   is: boolean
 }
 const If: FC<IfProps> = ({ children, is }) => {
-  if (!is || !children) return <></>
+  if (!is || !children) return null
 
   return <>{children}</>
 }

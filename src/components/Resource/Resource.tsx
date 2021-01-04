@@ -24,7 +24,7 @@ const Resource: FC<ResourceProps> = ({
   render,
 }: ResourceProps) => {
   if (error) {
-    return <>Error: {error.message}</>
+    return <>{`Error: ${error.message}`}</>
   }
   if (loading) {
     return <>{loadingIndicator || 'Loading...'}</>
