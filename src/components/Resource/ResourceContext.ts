@@ -3,6 +3,6 @@
  */
 import { createContext } from 'react'
 
-const ResourceContext = createContext(undefined)
+const ResourceContext = createContext([] as Record<string, any>)
 
 export default ResourceContext

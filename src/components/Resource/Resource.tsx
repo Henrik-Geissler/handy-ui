@@ -13,7 +13,7 @@ interface ResourceProps {
   error?: ErrorProps
   loading: boolean
   loadingIndicator?: ReactNode
-  payload: any
+  payload: Record<string, any>
   render: CallableFunction
 }
 const Resource: FC<ResourceProps> = ({
@@ -24,10 +24,10 @@ const Resource: FC<ResourceProps> = ({
   render,
 }: ResourceProps) => {
   if (error) {
-    return createElement(`Error: ${error.message}`) as ReactElement
+    return createElement(`Error: ${error.message}`)
   }
   if (loading) {
-    return (loadingIndicator || createElement('Loading...')) as ReactElement
+    return (loadingIndicator as ReactElement) || createElement('Loading...')
   }
 
   return (
