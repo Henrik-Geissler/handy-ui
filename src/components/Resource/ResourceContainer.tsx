@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2021, Henrik Geißler
+ * Copyright (c) 2021, Henrik Geißler.
  */
 import React, { FC, ReactNode, useEffect, useState } from 'react'
 
@@ -23,19 +23,19 @@ const ResourceContainer: FC<ResourceContainerProps> = ({
     setFetchError(undefined)
     setFetchPayload([])
     /**
-    fetch(src)
-      .then(response => response.json())
+    Fetch(src).
+      .then(response => response.json()).
       .then(
         result => {
-          setFetchLoading(false)
-          setFetchPayload(result)
+          setFetchLoading(false).
+          setFetchPayload(result).
         },
         error => {
-          setFetchLoading(false)
-          setFetchError(error)
+          setFetchLoading(false).
+          setFetchError(error).
         }
-      )
- */
+      ).
+     */
 
     return () => {}
   }, [src])

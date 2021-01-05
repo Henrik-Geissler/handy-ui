@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2021, Henrik Geißler
+ * Copyright (c) 2021, Henrik Geißler.
  */
 import { FC, ReactElement, ReactNode } from 'react'
 
