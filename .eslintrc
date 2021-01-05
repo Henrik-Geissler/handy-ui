@@ -32,6 +32,7 @@
     "typescript-sort-keys",
     "xss",
     "woke",
+    "jsdoc",
     "json-format",
     "jsx-a11y",
     "better-styled-components",
@@ -67,11 +68,12 @@
     "canonical/typescript",
     "plugin:typescript-sort-keys/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:jsdoc/recommended",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
   "rules": {
-    // SECURITY
+    // * SECURITY
     "security/detect-object-injection": "error",
     "xss/no-mixed-html": "error",
     "xss/no-location-href-assign": "error",
@@ -82,7 +84,7 @@
       { "ignoreIdentifiers": ["BASE64_VARIABLE"] }
     ],
 
-    // TOOLS
+    // * TOOLS
     "notice/notice": [
       "error",
       {
@@ -93,7 +95,7 @@
     "alphabetize/_": "error",
     "woke/all": "error",
 
-    // BOUNDARIES
+    // * BOUNDARIES
     "max-len": [
       "error",
       {
@@ -142,8 +144,6 @@
           "app",
           "Int",
           "key",
-          "req",
-          "res",
           "src",
           "url"
         ]
@@ -159,7 +159,7 @@
     "filenames/no-index": "error",
     "@typescript-eslint/no-unused-vars": "error",
 
-    // ANTI PATTERN
+    // * ANTI PATTERN
     "node/no-missing-import": [
       "error",
       {
@@ -183,7 +183,7 @@
     "eslint-comments/no-unused-disable": "warn",
     "eslint-comments/no-unlimited-disable": "off",
 
-    // STYLISTIC CONSISTENCY
+    // * STYLISTIC CONSISTENCY
     "padding-line-between-statements": [
       "error",
       { "blankLine": "never", "prev": "*", "next": "*" },
@@ -192,7 +192,6 @@
       { "blankLine": "always", "prev": "*", "next": "export" },
       { "blankLine": "any", "prev": "export", "next": "export" }
     ],
-    //https://www.npmjs.com/package/eslint-plugin-sort-class-members
     "sort-class-members/sort-class-members": [
       2,
       {
@@ -233,16 +232,56 @@
     "prefer-regex-literals": ["error", { "disallowRedundantWrapping": true }],
     "react/destructuring-assignment": ["error", "always"],
 
-    // DEACTIVATE UNUSED
+    // * FORCE DOCUMENTATION
+    "jsdoc/check-access": "warn", // Recommended
+    "jsdoc/check-alignment": "warn", // Recommended
+    "jsdoc/check-examples": "warn",
+    "jsdoc/check-indentation": "warn",
+    "jsdoc/check-line-alignment": "warn",
+    "jsdoc/check-param-names": "warn", // Recommended
+    "jsdoc/check-property-names": "warn", // Recommended
+    "jsdoc/check-syntax": "warn",
+    "jsdoc/check-tag-names": "warn", // Recommended
+    "jsdoc/check-types": "warn", // Recommended
+    "jsdoc/check-values": "warn", // Recommended
+    "jsdoc/empty-tags": "warn", // Recommended
+    "jsdoc/implements-on-classes": "warn", // Recommended
+    "jsdoc/match-description": "warn",
+    "jsdoc/newline-after-description": "warn", // Recommended
+    "jsdoc/no-bad-blocks": "warn",
+    "jsdoc/no-defaults": "warn",
+    "jsdoc/no-types": "warn",
+    "jsdoc/no-undefined-types": "warn", // Recommended
+    "jsdoc/require-description": "warn",
+    "jsdoc/require-description-complete-sentence": "warn",
+    "jsdoc/require-example": "warn",
+    "jsdoc/require-file-overview": "warn",
+    "jsdoc/require-hyphen-before-param-description": "warn",
+    "jsdoc/require-jsdoc": "warn", // Recommended
+    "jsdoc/require-param": "warn", // Recommended
+    "jsdoc/require-param-description": "warn", // Recommended
+    "jsdoc/require-param-name": "warn", // Recommended
+    "jsdoc/require-param-type": "warn", // Recommended
+    "jsdoc/require-property": "warn", // Recommended
+    "jsdoc/require-property-description": "warn", // Recommended
+    "jsdoc/require-property-name": "warn", // Recommended
+    "jsdoc/require-property-type": "warn", // Recommended
+    "jsdoc/require-returns": "warn", // Recommended
+    "jsdoc/require-returns-check": "warn", // Recommended
+    "jsdoc/require-returns-description": "warn", // Recommended
+    "jsdoc/require-returns-type": "warn", // Recommended
+    "jsdoc/valid-types": "warn", // Recommended
+
+    // * DEACTIVATE UNUSED
     "react/prop-types": "off",
     "react/require-default-props": "off",
     "no-multi-assign": "off",
     "react/jsx-no-literals": "off",
 
-    // DEACTIVATE DUPLICATES
+    // * DEACTIVATE DUPLICATES
     "@typescript-eslint/no-unused-expressions": "off",
 
-    //WIP
+    // * WIP
     "react/boolean-prop-naming": "error",
     "react/display-name": "error",
     "react/forbid-dom-props": "error",
@@ -286,7 +325,46 @@
       "files": ["*/components/**/*.test.tsx", "*/components/**/*.test.ts"],
       "rules": {
         "filenames/match-regex": ["error", "^[A-Z]{1}[a-zA-Z]+.test$"],
-        "toplevel/no-toplevel-side-effect": "off"
+        "toplevel/no-toplevel-side-effect": "off",
+
+        "jsdoc/check-access": "off", // Recommended
+        "jsdoc/check-alignment": "off", // Recommended
+        "jsdoc/check-examples": "off",
+        "jsdoc/check-indentation": "off",
+        "jsdoc/check-line-alignment": "off",
+        "jsdoc/check-param-names": "off", // Recommended
+        "jsdoc/check-property-names": "off", // Recommended
+        "jsdoc/check-syntax": "off",
+        "jsdoc/check-tag-names": "off", // Recommended
+        "jsdoc/check-types": "off", // Recommended
+        "jsdoc/check-values": "off", // Recommended
+        "jsdoc/empty-tags": "off", // Recommended
+        "jsdoc/implements-on-classes": "off", // Recommended
+        "jsdoc/match-description": "off",
+        "jsdoc/newline-after-description": "off", // Recommended
+        "jsdoc/no-bad-blocks": "off",
+        "jsdoc/no-defaults": "off",
+        "jsdoc/no-types": "off",
+        "jsdoc/no-undefined-types": "off", // Recommended
+        "jsdoc/require-description": "off",
+        "jsdoc/require-description-complete-sentence": "off",
+        "jsdoc/require-example": "off",
+        "jsdoc/require-file-overview": "off",
+        "jsdoc/require-hyphen-before-param-description": "off",
+        "jsdoc/require-jsdoc": "off", // Recommended
+        "jsdoc/require-param": "off", // Recommended
+        "jsdoc/require-param-description": "off", // Recommended
+        "jsdoc/require-param-name": "off", // Recommended
+        "jsdoc/require-param-type": "off", // Recommended
+        "jsdoc/require-property": "off", // Recommended
+        "jsdoc/require-property-description": "off", // Recommended
+        "jsdoc/require-property-name": "off", // Recommended
+        "jsdoc/require-property-type": "off", // Recommended
+        "jsdoc/require-returns": "off", // Recommended
+        "jsdoc/require-returns-check": "off", // Recommended
+        "jsdoc/require-returns-description": "off", // Recommended
+        "jsdoc/require-returns-type": "off", // Recommended
+        "jsdoc/valid-types": "off" // Recommended
       }
     }
   ]
