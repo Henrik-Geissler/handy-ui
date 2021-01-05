@@ -1,16 +1,16 @@
 /**
  * Copyright (c) 2021, Henrik Geißler
  */
-import React, { FC, ReactNode } from 'react'
+import { FC, ReactElement, ReactNode } from 'react'
 
 interface IfProps {
   children?: ReactNode
-  is: boolean
+  is?: boolean
 }
 const If: FC<IfProps> = ({ children, is }) => {
   if (!is || !children) return null
 
-  return <>{children}</>
+  return children as ReactElement
 }
 
 export default If
