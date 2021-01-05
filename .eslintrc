@@ -87,7 +87,7 @@
       "error",
       {
         "mustMatch": "Copyright \\(c\\)",
-        "templateFile": "src/copyright.ts"
+        "templateFile": ".vscode/copyright.ts"
       }
     ],
     "alphabetize/_": "error",
