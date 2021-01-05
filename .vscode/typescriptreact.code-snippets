@@ -1,6 +1,6 @@
 {
-  "Typescript React Function Component": {
-    "prefix": "rc",
+  "Typescript React Functional Component": {
+    "prefix": "fc",
     "body": [
       "import React, { FC } from 'react'",
       "",

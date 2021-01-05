@@ -4,4 +4,8 @@
 import { configure } from 'enzyme'
 import EnzymeAdapter from 'enzyme-adapter-react-16'
 
-configure({ adapter: new EnzymeAdapter() })
+const setupEnzyme = (): void => {
+  return configure({ adapter: new EnzymeAdapter() })
+}
+// eslint-disable-next-line toplevel/no-toplevel-side-effect
+setupEnzyme()

@@ -6,7 +6,7 @@ import React from 'react'
 
 import If from './If'
 
-test('<If> shows nothing if is=false', () => {
+test('shows nothing if is=false', () => {
   const test = shallow(
     <If is={false}>
       <p className='inside'>Hello</p>
@@ -14,7 +14,7 @@ test('<If> shows nothing if is=false', () => {
   )
   expect(test.isEmptyRender()).toBe(true)
 })
-test('<If> shows nothing if is=undefined', () => {
+test('shows nothing if is=undefined', () => {
   const test = shallow(
     <If>
       <p className='inside'>Hello</p>
@@ -28,13 +28,13 @@ test('<If> shows nothing if is=undefined', () => {
   )
   expect(test2.isEmptyRender()).toBe(true)
 })
-test('<If> shows nothing if no children', () => {
+test('shows nothing if no children', () => {
   const test = shallow(<If is />)
   expect(test.isEmptyRender()).toBe(true)
   const test2 = shallow(<If is>{undefined}</If>)
   expect(test2.isEmptyRender()).toBe(true)
 })
-test('<If> shows nothing if children suggests empty', () => {
+test('shows nothing if children suggests empty', () => {
   const test = shallow(<If is>{null}</If>)
   expect(test.isEmptyRender()).toBe(true)
   const test2 = shallow(<If is>{[]}</If>)
@@ -42,7 +42,7 @@ test('<If> shows nothing if children suggests empty', () => {
   const test3 = shallow(<If is>{false}</If>)
   expect(test3.isEmptyRender()).toBe(true)
 })
-test('<If> shows 1 child if is=true', () => {
+test('shows 1 child if is=true', () => {
   const test = shallow(
     <If is>
       <p className='inside'>Hello</p>
@@ -50,7 +50,7 @@ test('<If> shows 1 child if is=true', () => {
   )
   expect(test.find('.inside')).toHaveLength(1)
 })
-test('<If> shows multiple children if is=true', () => {
+test('shows multiple children if is=true', () => {
   const test = shallow(
     <If is>
       <p className='inside'>Hello1</p>
@@ -60,7 +60,7 @@ test('<If> shows multiple children if is=true', () => {
   )
   expect(test.find('.inside')).toHaveLength(3)
 })
-test('<If> shows valid React Elements if is=true', () => {
+test('shows valid React Elements if is=true', () => {
   const test = shallow(<If is>Hello</If>)
   expect(test.text()).toEqual('Hello')
   const test2 = shallow(<If is>{['Hello']}</If>)

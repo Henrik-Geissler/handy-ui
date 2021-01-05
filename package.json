@@ -22,7 +22,7 @@
     "ci:build": "tsc",
     "ci:format": "./node_modules/.bin/prettier --write \".\"",
     "ci:latest": "yarn upgrade --latest",
-    "ci:lint": "./node_modules/.bin/eslint --fix \".\"; exit 0",
+    "ci:lint": "./node_modules/.bin/eslint --fix \".\"",
     "ci:patch": "yarn version --patch",
     "ci:test": "jest --coverage",
     "dev": "yarn watch",

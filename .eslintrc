@@ -157,6 +157,7 @@
     "filenames/match-regex": ["error", "^[a-z]{1}[a-zA-Z.]+$"],
     "filenames/match-exported": "error",
     "filenames/no-index": "error",
+    "@typescript-eslint/no-unused-vars": "error",
 
     // ANTI PATTERN
     "node/no-missing-import": [
@@ -239,7 +240,6 @@
     "react/jsx-no-literals": "off",
 
     // DEACTIVATE DUPLICATES
-    "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-unused-expressions": "off",
 
     //WIP
