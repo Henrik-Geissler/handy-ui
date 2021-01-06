@@ -1,23 +1,23 @@
+/**
+ * Copyright (c) 2021, Henrik Geißler.
+ */
 import React, { FC, useEffect } from 'react'
 
 interface ErrorProps {
-    name?:string
-    code?:number
-    message?:string
+  code?: number
+  message?: string
+  name?: string
 }
-const Error: FC<ErrorProps> = ({
- name,code,message
-}) => {
-
-    useEffect(() =>{
-    
-    throw{
-        error: name ||'Exception from ErrorComponent',
-        code: code || 0,
-        errorInfo:message||'No further Information'
+const Error: FC<ErrorProps> = ({ code, message, name }) => {
+  useEffect(() => {
+    throw {
+      code: code || 0,
+      error: name || 'Exception from ErrorComponent',
+      errorInfo: message || 'No further Information',
     }
-    },[])
-    return null
+  }, [])
+
+  return null
 }
 
-export default Error;
+export default Error
