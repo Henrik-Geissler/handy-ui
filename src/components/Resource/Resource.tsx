@@ -2,6 +2,7 @@
  * Copyright (c) 2021, Henrik Geißler.
  */
 import React, { createElement, FC, ReactElement, ReactNode } from 'react'
+import  Error  from '../Error/Error'
 
 import ResourceContext from './ResourceContext'
 
@@ -24,7 +25,7 @@ const Resource: FC<ResourceProps> = ({
   render,
 }: ResourceProps) => {
   if (error) {
-    return createElement(`Error: ${error.message}`)
+    return <Error message={error.message} code={error.code} />
   }
   if (loading) {
     return (loadingIndicator as ReactElement) || createElement('Loading...')
