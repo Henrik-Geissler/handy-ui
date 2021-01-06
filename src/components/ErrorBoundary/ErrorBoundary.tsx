@@ -1,25 +1,36 @@
-import Component from 'react'
-import If from '../If/If';
-import Toast from '../Toast/Toast';
+/**
+ * Copyright (c) 2021, Henrik Geißler.
+ */
+import React, { Component } from 'react'
+
+import If from '../If/If'
+import Toast from '../Toast/Toast'
 
 class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false};
+  static getDerivedStateFromError(error: any) {
+    return { hasError: true }
   }
 
-  static getDerivedStateFromError(error) {
-    return { hasError: true };
+  constructor(props: any) {
+    super(props)
+    this.state = { hasError: false }
   }
 
-  componentDidCatch(error, errorInfo) {
-    console.log('ERROR: '+error+'->'+errorInfo)
+  componentDidCatch(error: any, errorInfo: any) {
+    console.log(`ERROR: ${error}->${errorInfo}`)
     // You can also log the error to an error reporting service
-    //logErrorToMyService(error, errorInfo);
+    // logErrorToMyService(error, errorInfo);
   }
 
   render() {
-    return <><If is={this.state.hasError}><Toast variant='error' message=''/></If> {this.props.children} </>
+    return (
+      <>
+        <If is={false /** This.state.hasError**/}>
+          <Toast message='' variant='error' />
+        </If>
+        {this.props.children}
+      </>
+    )
   }
 }
 

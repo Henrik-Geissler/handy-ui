@@ -1,20 +1,20 @@
+/**
+ * Copyright (c) 2021, Henrik Geißler.
+ */
+import { useSnackbar } from 'notistack'
 import React, { FC, useEffect } from 'react'
-import { enqueueSnackbar} from 'notistack'
+
 interface ToastProps {
   message: string
   variant: string
 }
-const Toast: FC<ToastProps> = ({
-    message,variant
-  
-}) => {
-  
-    useEffect(
-        () =>{
-            enqueueSnackbar(message, { variant });
-        },[]
-    )
-    return null
+const Toast: FC<ToastProps> = ({ message, variant }) => {
+  const { enqueueSnackbar } = useSnackbar()
+  useEffect(() => {
+    enqueueSnackbar(message)
+  }, [])
+
+  return null
 }
 
-export default Toast;
+export default Toast

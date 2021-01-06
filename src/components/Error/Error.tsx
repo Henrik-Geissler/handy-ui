@@ -17,6 +17,7 @@ const Error: FC<ErrorProps> = ({
         errorInfo:message||'No further Information'
     }
     },[])
+    return null
 }
 
 export default Error;
