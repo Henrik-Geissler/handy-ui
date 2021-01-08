@@ -116,7 +116,7 @@
     ],
     "max-depth": ["error", 4],
     "complexity": ["error", 6],
-    "max-nested-callbacks": ["error", 2],
+    "max-nested-callbacks": ["error", 3],
     "max-params": ["error", 4],
     "max-statements": ["error", 10],
     "optimize-regex/optimize-regex": "error",
@@ -146,6 +146,7 @@
           "Int",
           "key",
           "src",
+          "res",
           "url"
         ]
       }
@@ -342,6 +343,8 @@
       "rules": {
         "filenames/match-regex": ["error", "^[A-Z]{1}[a-zA-Z]+.test$"],
         "toplevel/no-toplevel-side-effect": "off",
+        "react/jsx-no-bind":"off",
+        "max-lines":"off",
 
         "jsdoc/check-access": "off", // Recommended
         "jsdoc/check-alignment": "off", // Recommended
