@@ -2,14 +2,14 @@
   "Typescript React Functional Component": {
     "prefix": "fc",
     "body": [
-      "import React, { FC } from 'react'",
+      "import React from 'react'",
       "",
       "interface ${TM_FILENAME_BASE}Props {",
       "  $0",
       "}",
-      "const $TM_FILENAME_BASE: FC<${TM_FILENAME_BASE}Props> = ({",
+      "const $TM_FILENAME_BASE = ({",
       "  $2",
-      "}) => {",
+      "}: ${TM_FILENAME_BASE}Props ): JSX.Element | null => {",
       "  $3",
       "    return (",
       "      <>",
