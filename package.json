@@ -26,7 +26,7 @@
     "ci:patch": "yarn version --patch",
     "ci:test": "jest --silent --coverage",
     "dev": "yarn watch",
-    "prepublish": "yarn run build",
+    "prepublish": "yarn run build; cp ./.npmignore ./dist/.npmignore",
     "test": "jest --silent",
     "watch": "mkdir \"`pwd`\"/secrets; echo \"cd \"`pwd`\";yarn watch:build;exit;\" > \"`pwd`\"/secrets/watchBuild.command; chmod +x \"`pwd`\"/secrets/watchBuild.command; echo \"cd \"`pwd`\";yarn watch:test;exit;\" > \"`pwd`\"/secrets/watchTest.command; chmod +x \"`pwd`\"/secrets/watchTest.command; open \"`pwd`\"/secrets/watchBuild.command; open \"`pwd`\"/secrets/watchTest.command;",
     "watch:build": "tsc -w",
