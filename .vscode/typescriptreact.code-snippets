@@ -1,5 +1,5 @@
 {
-  "Typescript React Functional Component": {
+  "Typescript React Function Component": {
     "prefix": "fc",
     "body": [
       "import React from 'react'",
@@ -22,5 +22,33 @@
       ""
     ],
     "description": "Typescript React Function Component"
+  },
+  "Typescript React Unit Test": {
+    "prefix": "ut",
+    "body": [
+      "import { render, screen } from '@testing-library/react'",
+      "import React from 'react'",
+      "",
+      "import ${TM_FILENAME/(.*)\\.test..+$/$1/} from './${TM_FILENAME/(.*)\\.test..+$/$1/}'",
+      "",
+      "const testCases = [",
+      "  {",
+      "    case:'',",
+      "    result:'',",
+      "  }",
+      "]",
+      "testCases.forEach(testCase =>",
+      "  test('${1:render }', () => {",
+      "    const { container: test0 } = render(",
+      "      <${TM_FILENAME/(.*)\\.test..+$/$1/} $2>",
+      "        $3",
+      "      </${TM_FILENAME/(.*)\\.test..+$/$1/}>",
+      "    )",
+      "    expect($4)",
+      "  })",
+      ")",
+      ""
+    ],
+    "description": "Typescript React Unit Test"
   }
 }
