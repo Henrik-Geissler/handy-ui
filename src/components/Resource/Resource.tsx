@@ -12,7 +12,7 @@ type ErrorProps = {
 }
 type ResourceProps = {
   error?: ErrorProps
-  loading: boolean
+  loading?: boolean
   loadingIndicator?: ReactNode
   payload: Record<string, any>
   render: CallableFunction

@@ -1,6 +1,8 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
+
+import axios from 'axios'
 import React, { ReactNode, useEffect, useState } from 'react'
 
 import Resource from './Resource'
@@ -19,23 +21,16 @@ const ResourceContainer = ({
   const [fetchError, setFetchError] = useState(undefined)
   const [fetchPayload, setFetchPayload] = useState([])
   useEffect(() => {
-    setFetchLoading(true)
-    setFetchError(undefined)
-    setFetchPayload([])
-    /**
-    Fetch(src).
-      .then(response => response.json()).
-      .then(
-        result => {
-          setFetchLoading(false).
-          setFetchPayload(result).
-        },
-        error => {
-          setFetchLoading(false).
-          setFetchError(error).
-        }
-      ).
-     */
+    axios.get(src).then(
+      (response: any) => {
+        setFetchLoading(false)
+        setFetchPayload(response.data)
+      },
+      (error: any) => {
+        setFetchLoading(false)
+        setFetchError(error)
+      }
+    )
 
     return () => {}
   }, [src])

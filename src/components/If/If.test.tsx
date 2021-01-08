@@ -6,43 +6,71 @@ import React from 'react'
 
 import If from './If'
 
-test('render nothing if is=false', () => {
+const testCases = [
+  {
+    case: false,
+  },
+  {
+    case: undefined,
+  },
+]
+testCases.forEach(testCase =>
+  test(`render nothing when is=${testCase.case}`, () => {
+    const { container: test0 } = render(
+      <If is={testCase.case}>
+        <p className='inside'>Hello</p>
+      </If>
+    )
+    expect(test0.firstChild).toBeNull()
+  })
+)
+test('render nothing when no is', () => {
   const { container: test0 } = render(
-    <If is={false}>
+    <If>
       <p className='inside'>Hello</p>
     </If>
   )
   expect(test0.firstChild).toBeNull()
 })
-test('render nothing if is=undefined', () => {
-  const { container: test0 } = render(
-    <If is={undefined}>
-      <p className='inside'>Hello</p>
-    </If>
-  )
-  expect(test0.firstChild).toBeNull()
-  const { container: test1 } = render(
-    <If is={undefined}>
-      <p className='inside'>Hello</p>
-    </If>
-  )
-  expect(test1.firstChild).toBeNull()
-})
-test('render nothing if no children', () => {
+test('render nothing when self-closing', () => {
   const { container: test0 } = render(<If is />)
   expect(test0.firstChild).toBeNull()
-  const { container: test1 } = render(<If is>{undefined}</If>)
-  expect(test1.firstChild).toBeNull()
 })
-test('render nothing if children is null', () => {
-  const { container: test0 } = render(<If is>{null}</If>)
-  expect(test0.firstChild).toBeNull()
-  const { container: test1 } = render(<If is>{[]}</If>)
-  expect(test1.firstChild).toBeNull()
-  const { container: test2 } = render(<If is>{false}</If>)
-  expect(test2.firstChild).toBeNull()
-})
-test('render single children if is=true', () => {
+const testCases1 = [
+  {
+    case: undefined,
+  },
+  {
+    case: null,
+  },
+  {
+    case: false,
+  },
+  {
+    case: [],
+  },
+  {
+    case: '',
+  },
+]
+testCases1.forEach(testCase =>
+  test(`render nothing when children is ${testCase.case}`, () => {
+    const { container: test0 } = render(<If is>{testCase.case}</If>)
+    expect(test0.firstChild).toBeNull()
+  })
+)
+const testCases2 = [
+  {
+    case: 'Hello',
+  },
+]
+testCases2.forEach(testCase =>
+  test(`render string literal "${testCase.case}" when is=true`, () => {
+    render(<If is>{testCase.case}</If>)
+    expect(screen.getByText(testCase.case)).toBeDefined()
+  })
+)
+test('render JSX Element when is=true', () => {
   render(
     <If is>
       <p className='inside'>Hello</p>
@@ -50,11 +78,7 @@ test('render single children if is=true', () => {
   )
   expect(screen.getByText('Hello')).toBeDefined()
 })
-test('render string literal if is=true', () => {
-  render(<If is>Hello</If>)
-  expect(screen.getByText('Hello')).toBeDefined()
-})
-test('render multiple children if is=true', () => {
+test('render multiple children when is=true', () => {
   render(
     <If is>
       <p>Hello</p>
@@ -64,7 +88,7 @@ test('render multiple children if is=true', () => {
   )
   expect(screen.queryAllByText('Hello')).toHaveLength(3)
 })
-test('remove children if is becomes false', () => {
+test('remove children when is becomes false', () => {
   const { container } = render(<If is>Hello</If>)
   expect(screen.queryByText('Hello')).toBeDefined()
   render(<If>Hello</If>, { container })
