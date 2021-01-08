@@ -131,6 +131,7 @@
         "min": 4,
         "max": 24,
         "exceptions": [
+          "_",
           "$",
           "h",
           "s",
@@ -157,7 +158,7 @@
     "filenames/match-regex": ["error", "^[a-z]{1}[a-zA-Z.]+$"],
     "filenames/match-exported": "error",
     "filenames/no-index": "error",
-    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": ["error",{"varsIgnorePattern": "_"}],
 
     // * ANTI PATTERN
     "node/no-missing-import": [
@@ -173,7 +174,6 @@
     "no-return-await": "error",
     "no-unreachable": "error",
     "immutable/no-let": "warn",
-    "immutable/no-this": "warn",
     "immutable/no-mutation": "warn",
     "type-graphql/invalid-nullable-output-type": "off",
     "type-graphql/invalid-nullable-input-type": "error",
@@ -231,6 +231,7 @@
     "no-implicit-globals": "error",
     "prefer-regex-literals": ["error", { "disallowRedundantWrapping": true }],
     "react/destructuring-assignment": ["error", "always"],
+    "react/state-in-constructor":["error","never"],
 
     // * FORCE DOCUMENTATION
     "jsdoc/check-access": "warn", // Recommended
@@ -280,6 +281,7 @@
 
     // * DEACTIVATE DUPLICATES
     "@typescript-eslint/no-unused-expressions": "off",
+    "immutable/no-this": "off",
 
     // * WIP
     "react/boolean-prop-naming": "error",
@@ -296,7 +298,7 @@
     "react/jsx-closing-tag-location": "error",
     "react/jsx-curly-brace-presence": "error",
     "react/jsx-filename-extension": "error",
-    "react/jsx-max-depth": "error",
+    "react/jsx-max-depth": "off",
     "react/jsx-no-script-url": "error",
     "react/jsx-no-useless-fragment": "error",
     "react/jsx-one-expression-per-line": "error",
@@ -316,9 +318,20 @@
   },
   "overrides": [
     {
+      // Functional Components
       "files": ["*/components/**/*.tsx", "*/components/**/*Context.ts"],
       "rules": {
         "filenames/match-regex": ["error", "^[A-Z]{1}[a-zA-Z]+$"]
+      }
+    },
+    {
+      // Class Components
+      "files": ["*/components/**/*Class.tsx"],
+      "rules": {
+        "filenames/match-regex": ["error", "^[A-Z]{1}[a-zA-Z]+$"],
+        "filenames/match-exported": [ "error", null, "\\Class$" ],
+        "fp/no-class": "off",
+        "fp/no-this": "off"
       }
     },
     {
