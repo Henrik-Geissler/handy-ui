@@ -158,7 +158,10 @@
     "filenames/match-regex": ["error", "^[a-z]{1}[a-zA-Z.]+$"],
     "filenames/match-exported": "error",
     "filenames/no-index": "error",
-    "@typescript-eslint/no-unused-vars": ["error",{"varsIgnorePattern": "_"}],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "varsIgnorePattern": "_" }
+    ],
 
     // * ANTI PATTERN
     "node/no-missing-import": [
@@ -231,7 +234,7 @@
     "no-implicit-globals": "error",
     "prefer-regex-literals": ["error", { "disallowRedundantWrapping": true }],
     "react/destructuring-assignment": ["error", "always"],
-    "react/state-in-constructor":["error","never"],
+    "react/state-in-constructor": ["error", "never"],
 
     // * FORCE DOCUMENTATION
     "jsdoc/check-access": "warn", // Recommended
@@ -329,7 +332,7 @@
       "files": ["*/components/**/*Class.tsx"],
       "rules": {
         "filenames/match-regex": ["error", "^[A-Z]{1}[a-zA-Z]+$"],
-        "filenames/match-exported": [ "error", null, "\\Class$" ],
+        "filenames/match-exported": ["error", null, "\\Class$"],
         "fp/no-class": "off",
         "fp/no-this": "off"
       }
