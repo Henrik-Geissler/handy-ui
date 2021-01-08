@@ -1,21 +1,15 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-import React, { FC, useEffect } from 'react'
+import { useEffect } from 'react'
 
-interface ErrorProps {
-  code?: number
+type ErrorProps = {
   message?: string
-  name?: string
 }
-const Error: FC<ErrorProps> = ({ code, message, name }) => {
+const Error = ({ message }: ErrorProps): null => {
   useEffect(() => {
-    throw {
-      code: code || 0,
-      error: name || 'Exception from ErrorComponent',
-      errorInfo: message || 'No further Information',
-    }
-  }, [])
+    throw new TypeError(message || 'ErrorComponent without message')
+  }, [message])
 
   return null
 }

@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-import React, { FC } from 'react'
+import React from 'react'
 
-interface SpaceProps {
+type SpaceProps = {
   height: string
   width: string
 }
-const Space: FC<SpaceProps> = ({ height, width }) => {
+const Space = ({ height, width }: SpaceProps): JSX.Element | null => {
   return (
     <div
       style={{

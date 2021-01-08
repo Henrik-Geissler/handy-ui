@@ -2,17 +2,24 @@
  * Copyright (c) 2021, Henrik Geißler.
  */
 import { SnackbarProvider } from 'notistack'
-import React, { FC } from 'react'
+import React from 'react'
 
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
+import Error from '../Error/Error'
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundaryClass'
 import FullHeight from '../FullHeight/FullHeight'
+import If from '../If/If'
+import Toast from '../Toast/Toast'
 
-interface PageProps {}
-const Page: FC<PageProps> = ({}) => {
+type PageProps = {}
+const Page = ({}: PageProps): JSX.Element | null => {
   return (
     <SnackbarProvider maxSnack={3}>
       <ErrorBoundary>
         <FullHeight />
+        <If>
+          <Error />
+        </If>
+        <Toast message='Hello World' />
       </ErrorBoundary>
     </SnackbarProvider>
   )

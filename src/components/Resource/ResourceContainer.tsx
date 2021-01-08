@@ -1,20 +1,20 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-import React, { FC, ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 
 import Resource from './Resource'
 
-interface ResourceContainerProps {
+type ResourceContainerProps = {
   loadingIndicator?: ReactNode
   render: CallableFunction
   src: string
 }
-const ResourceContainer: FC<ResourceContainerProps> = ({
+const ResourceContainer = ({
   loadingIndicator,
   render,
   src,
-}) => {
+}: ResourceContainerProps): JSX.Element | null => {
   const [fetchLoading, setFetchLoading] = useState(true)
   const [fetchError, setFetchError] = useState(undefined)
   const [fetchPayload, setFetchPayload] = useState([])

@@ -1,34 +1,34 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-import React, { createElement, FC, ReactElement, ReactNode } from 'react'
+import React, { createElement, ReactNode } from 'react'
 
 import Error from '../Error/Error'
 import ResourceContext from './ResourceContext'
 
-interface ErrorProps {
+type ErrorProps = {
   code: number
   message: string
 }
-interface ResourceProps {
+type ResourceProps = {
   error?: ErrorProps
   loading: boolean
   loadingIndicator?: ReactNode
   payload: Record<string, any>
   render: CallableFunction
 }
-const Resource: FC<ResourceProps> = ({
+const Resource = ({
   error,
   loading,
   loadingIndicator,
   payload,
   render,
-}: ResourceProps) => {
+}: ResourceProps): JSX.Element | null => {
   if (error) {
-    return <Error code={error.code} message={error.message} />
+    return <Error message={error.message} />
   }
   if (loading) {
-    return (loadingIndicator as ReactElement) || createElement('Loading...')
+    return (loadingIndicator as JSX.Element) || createElement('Loading...')
   }
 
   return (

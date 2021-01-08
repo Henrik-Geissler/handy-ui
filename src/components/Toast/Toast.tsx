@@ -2,17 +2,17 @@
  * Copyright (c) 2021, Henrik Geißler.
  */
 import { useSnackbar } from 'notistack'
-import React, { FC, useEffect } from 'react'
+import { useEffect } from 'react'
 
-interface ToastProps {
+type ToastProps = {
   message: string
-  variant: string
+  variant?: 'default' | 'error' | 'success' | 'warning' | 'info'
 }
-const Toast: FC<ToastProps> = ({ message, variant }) => {
+const Toast = ({ message, variant }: ToastProps): null => {
   const { enqueueSnackbar } = useSnackbar()
   useEffect(() => {
-    enqueueSnackbar(message)
-  }, [])
+    enqueueSnackbar(message, { variant: variant || 'default' })
+  }, [message, variant, enqueueSnackbar])
 
   return null
 }

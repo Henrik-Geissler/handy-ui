@@ -1,70 +1,72 @@
 /**
  * Copyright (c) 2021, Henrik Geißler
  */
-import { shallow } from 'enzyme'
+import { render, screen } from '@testing-library/react'
 import React from 'react'
 
 import If from './If'
 
-test('shows nothing if is=false', () => {
-  const test = shallow(
+test('render nothing if is=false', () => {
+  const { container: test0 } = render(
     <If is={false}>
       <p className='inside'>Hello</p>
     </If>
   )
-  expect(test.isEmptyRender()).toBe(true)
+  expect(test0.firstChild).toBeNull()
 })
-test('shows nothing if is=undefined', () => {
-  const test = shallow(
-    <If>
-      <p className='inside'>Hello</p>
-    </If>
-  )
-  expect(test.isEmptyRender()).toBe(true)
-  const test2 = shallow(
+test('render nothing if is=undefined', () => {
+  const { container: test0 } = render(
     <If is={undefined}>
       <p className='inside'>Hello</p>
     </If>
   )
-  expect(test2.isEmptyRender()).toBe(true)
+  expect(test0.firstChild).toBeNull()
+  const { container: test1 } = render(
+    <If is={undefined}>
+      <p className='inside'>Hello</p>
+    </If>
+  )
+  expect(test1.firstChild).toBeNull()
 })
-test('shows nothing if no children', () => {
-  const test = shallow(<If is />)
-  expect(test.isEmptyRender()).toBe(true)
-  const test2 = shallow(<If is>{undefined}</If>)
-  expect(test2.isEmptyRender()).toBe(true)
+test('render nothing if no children', () => {
+  const { container: test0 } = render(<If is />)
+  expect(test0.firstChild).toBeNull()
+  const { container: test1 } = render(<If is>{undefined}</If>)
+  expect(test1.firstChild).toBeNull()
 })
-test('shows nothing if children suggests empty', () => {
-  const test = shallow(<If is>{null}</If>)
-  expect(test.isEmptyRender()).toBe(true)
-  const test2 = shallow(<If is>{[]}</If>)
-  expect(test2.isEmptyRender()).toBe(true)
-  const test3 = shallow(<If is>{false}</If>)
-  expect(test3.isEmptyRender()).toBe(true)
+test('render nothing if children is null', () => {
+  const { container: test0 } = render(<If is>{null}</If>)
+  expect(test0.firstChild).toBeNull()
+  const { container: test1 } = render(<If is>{[]}</If>)
+  expect(test1.firstChild).toBeNull()
+  const { container: test2 } = render(<If is>{false}</If>)
+  expect(test2.firstChild).toBeNull()
 })
-test('shows 1 child if is=true', () => {
-  const test = shallow(
+test('render single children if is=true', () => {
+  render(
     <If is>
       <p className='inside'>Hello</p>
     </If>
   )
-  expect(test.find('.inside')).toHaveLength(1)
+  expect(screen.getByText('Hello')).toBeDefined()
 })
-test('shows multiple children if is=true', () => {
-  const test = shallow(
+test('render string literal if is=true', () => {
+  render(<If is>Hello</If>)
+  expect(screen.getByText('Hello')).toBeDefined()
+})
+test('render multiple children if is=true', () => {
+  render(
     <If is>
-      <p className='inside'>Hello1</p>
-      <p className='inside'>Hello2</p>
-      <p className='inside'>Hello3</p>
+      <p>Hello</p>
+      <p>Hello</p>
+      <p>Hello</p>
     </If>
   )
-  expect(test.find('.inside')).toHaveLength(3)
+  expect(screen.queryAllByText('Hello')).toHaveLength(3)
 })
-test('shows valid React Elements if is=true', () => {
-  const test = shallow(<If is>Hello</If>)
-  expect(test.text()).toEqual('Hello')
-  const test2 = shallow(<If is>{['Hello']}</If>)
-  expect(test2.text()).toEqual('Hello')
-  const test3 = shallow(<If is>{{ hello: 'world' }}</If>)
-  expect(test3.text()).toEqual('')
+test('remove children if is becomes false', () => {
+  const { container } = render(<If is>Hello</If>)
+  expect(screen.queryByText('Hello')).toBeDefined()
+  render(<If>Hello</If>, { container })
+  expect(screen.queryByText('Hello')).toBeNull()
 })

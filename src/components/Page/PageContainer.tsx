@@ -1,14 +1,16 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-import React, { FC, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 import { Page } from '../../main'
 
-interface PageContainerProps {
+type PageContainerProps = {
   children?: ReactNode
 }
-const PageContainer: FC<PageContainerProps> = ({ children }) => {
+const PageContainer = ({
+  children,
+}: PageContainerProps): JSX.Element | null => {
   return <Page>{children}</Page>
 }
 
