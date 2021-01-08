@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn
+      - run: yarn install
       - run: yarn ci:upgrade
       - run: |
           git config --local user.email "action@github.com"
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn
+      - run: yarn install
       - run: yarn ci:build
       - run: yarn ci:test
       - run: bash <(curl -s https://codecov.io/bash) -X gcov -Z
