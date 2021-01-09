@@ -12,8 +12,7 @@ export { default as Toast } from './components/Toast/Toast'
 
 // WIP
 
-
-export { default as ErrorBoundary } from './components/ErrorBoundary/ErrorBoundaryClass'
 export { default as BodyWrapper } from './components/BodyWrapper/BodyWrapper'
+export { default as ErrorBoundary } from './components/ErrorBoundary/ErrorBoundaryClass'
 export { default as RealHeight } from './components/RealHeight/RealHeight'
 export { default as UnlockAudio } from './components/UnlockAudio/UnlockAudio'
