@@ -42,8 +42,7 @@
     "axios": "^0.21.1",
     "next": "^10.0.4",
     "notistack": "^1.0.3",
-    "react": "^17.0.1",
-    "styled-components": "^5.2.1"
+    "react": "^17.0.1"
   },
   "devDependencies": {
     "@getify/eslint-plugin-proper-arrows": "^10.0.0",
