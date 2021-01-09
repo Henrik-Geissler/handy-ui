@@ -10,7 +10,6 @@ import ErrorBoundary from '../ErrorBoundary/ErrorBoundaryClass'
 import If from '../If/If'
 import RealHeight from '../RealHeight/RealHeight'
 import Style from '../Style/Style'
-import Toast from '../Toast/Toast'
 import UnlockAudio from '../UnlockAudio/UnlockAudio'
 
 type PageProps = {
@@ -26,7 +25,6 @@ const Page = ({
   return (
     <SnackbarProvider maxSnack={3}>
       <ErrorBoundary>
-        <RealHeight />
         <If is={audio}>
           <UnlockAudio />
         </If>
@@ -34,10 +32,8 @@ const Page = ({
           <If>
             <Error />
           </If>
-          <Toast message='Hello World' />
           {children}
         </BodyWrapper>
-        <Style src='css/lazy' />
       </ErrorBoundary>
     </SnackbarProvider>
   )
