@@ -1,4 +1,5 @@
 {
+  "diffEditor.wordWrap": "on",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -20,11 +21,11 @@
     "jsonc",
     "yaml"
   ],
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "jest.enableInlineErrorMessages": true,
   "jest.showCoverageOnLoad": true,
   "jest.pathToConfig": "./jest.config.js",
   "prettier.packageManager": "yarn",
   "prettier.configPath": ".prettierrc",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
