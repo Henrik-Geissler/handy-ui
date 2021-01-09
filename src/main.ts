@@ -1,7 +1,6 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-namespace HUI {
   export { default as Error } from './components/Error/Error'
   export { default as Fallback } from './components/Error/Error'
   export { default as If } from './components/If/If'
@@ -17,6 +16,3 @@ namespace HUI {
   export { default as ErrorBoundary } from './components/ErrorBoundary/ErrorBoundaryClass'
   export { default as RealHeight } from './components/RealHeight/RealHeight'
   export { default as UnlockAudio } from './components/UnlockAudio/UnlockAudio'
-}
-
-export default HUI
