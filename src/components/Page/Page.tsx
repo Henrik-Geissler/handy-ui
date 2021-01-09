@@ -36,7 +36,7 @@ const Page = ({
           </If>
           {children}
         </BodyWrapper>
-        <Toast message='Hello World />
+        <Toast message='Hello World' />
       </ErrorBoundary>
     </SnackbarProvider>
   )
