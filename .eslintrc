@@ -81,7 +81,7 @@
     "no-unsanitized/property": "error",
     "no-secrets/no-secrets": [
       "error",
-      { "ignoreIdentifiers": ["BASE64","base64"] }
+      { "ignoreIdentifiers": ["BASE64", "base64"] }
     ],
 
     // * TOOLS
