@@ -1,1 +1,1 @@
-declare module 'handy-ui';
+declare module 'handy-ui'
