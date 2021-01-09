@@ -10,7 +10,7 @@ A Collection of useful React Components
 [![size](https://img.shields.io/bundlephobia/min/handy-ui)](https://www.npmjs.com/package/handy-ui)
 [![License](https://img.shields.io/github/license/Henrik-Geissler/handy-ui)](https://github.com/Henrik-Geissler/handy-ui)
 
-Look at some Examples, or directly go to the Documentation.
+Look at some Examples, or directly go to the [Documentation](https://handy-ui-web.vercel.app).
 
 ## Installation
 
