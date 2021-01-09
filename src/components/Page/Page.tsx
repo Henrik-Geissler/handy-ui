@@ -2,24 +2,42 @@
  * Copyright (c) 2021, Henrik Geißler.
  */
 import { SnackbarProvider } from 'notistack'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
+import BodyWrapper from '../BodyWrapper/BodyWrapper'
 import Error from '../Error/Error'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundaryClass'
-import FullHeight from '../FullHeight/FullHeight'
 import If from '../If/If'
+import RealHeight from '../RealHeight/RealHeight'
+import Style from '../Style/Style'
 import Toast from '../Toast/Toast'
+import UnlockAudio from '../UnlockAudio/UnlockAudio'
 
-type PageProps = {}
-const Page = ({}: PageProps): JSX.Element | null => {
+type PageProps = {
+  audio?: boolean
+  children: ReactNode
+  scrollable?: boolean
+}
+const Page = ({
+  audio,
+  children,
+  scrollable,
+}: PageProps): JSX.Element | null => {
   return (
     <SnackbarProvider maxSnack={3}>
       <ErrorBoundary>
-        <FullHeight />
-        <If>
-          <Error />
+        <RealHeight />
+        <If is={audio}>
+          <UnlockAudio />
         </If>
-        <Toast message='Hello World' />
+        <BodyWrapper scrollable={scrollable || true}>
+          <If>
+            <Error />
+          </If>
+          <Toast message='Hello World' />
+          {children}
+        </BodyWrapper>
+        <Style src='css/lazy' />
       </ErrorBoundary>
     </SnackbarProvider>
   )

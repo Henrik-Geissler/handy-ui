@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-import React, { createElement, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 import Error from '../Error/Error'
 import ResourceContext from './ResourceContext'
@@ -28,7 +28,7 @@ const Resource = ({
     return <Error message={error.message} />
   }
   if (loading) {
-    return (loadingIndicator as JSX.Element) || createElement('Loading...')
+    return (loadingIndicator as JSX.Element) || null
   }
 
   return (
