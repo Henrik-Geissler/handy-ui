@@ -1,7 +1,6 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-import { useSnackbar } from 'notistack'
 import { Component, ErrorInfo, ReactNode } from 'react'
 
 type Props = {
@@ -20,15 +19,13 @@ class ErrorBoundary extends Component<Props, State> {
     hasError: false,
   }
 
-  shouldComponentUpdate(): boolean {
-    return true
-  }
-
   public componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+    /**
     const { enqueueSnackbar } = useSnackbar()
     enqueueSnackbar(`Uncaught error:${error} ${errorInfo}`, {
       variant: 'error',
     })
+    */
     // eslint-disable-next-line no-console
     console.error('Uncaught error:', error, errorInfo)
   }
