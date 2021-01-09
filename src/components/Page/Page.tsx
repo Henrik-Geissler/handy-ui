@@ -9,8 +9,8 @@ import Error from '../Error/Error'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundaryClass'
 import If from '../If/If'
 import RealHeight from '../RealHeight/RealHeight'
-import Toast from '../Toast/Toast'
 import Style from '../Style/Style'
+import Toast from '../Toast/Toast'
 import UnlockAudio from '../UnlockAudio/UnlockAudio'
 
 type PageProps = {

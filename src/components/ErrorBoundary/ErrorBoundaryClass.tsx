@@ -24,8 +24,8 @@ class ErrorBoundary extends Component<Props, State> {
     const { enqueueSnackbar } = useSnackbar()
     enqueueSnackbar(`Uncaught error:${error} ${errorInfo}`, {
       variant: 'error',
-    })
-    */
+    }).
+     */
     // eslint-disable-next-line no-console
     console.error('Uncaught error:', error, errorInfo)
   }
