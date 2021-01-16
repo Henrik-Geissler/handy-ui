@@ -30,6 +30,7 @@ const Page = ({
         <If is={audio}>
           <UnlockAudio />
         </If>
+        <LazyImage />
         <BodyWrapper scrollable={scrollable || true}>
           <If>
             <Error />
@@ -37,6 +38,7 @@ const Page = ({
           {children}
         </BodyWrapper>
         <Toast message='Hello World' />
+        <Style src='css/lazy' />
       </ErrorBoundary>
     </SnackbarProvider>
   )
