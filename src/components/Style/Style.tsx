@@ -3,7 +3,7 @@
  */
 import React from 'react'
 
-interface StyleProps {
+type StyleProps = {
   src: string
 }
 const Style = ({ src }: StyleProps): JSX.Element | null => {

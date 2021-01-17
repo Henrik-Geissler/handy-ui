@@ -14,7 +14,7 @@ const defaults = {
 /**
  * Fetches the image for the given URL.
  *
- * @param url - The URL.
+ * @param  url - The URL.
  * @example
  */
 const fetchImage = (url: string) => {
@@ -33,7 +33,7 @@ const LazyImages = (): JSX.Element | null => {
   /**
    * Apply the image.
    *
-   * @param image - The HTMLImageElement the source will be applied to.
+   * @param  image - The HTMLImageElement the source will be applied to.
    * @param source - The Source to be applied.
    * @example
    */
@@ -46,7 +46,7 @@ const LazyImages = (): JSX.Element | null => {
   /**
    * Preloads the image.
    *
-   * @param image - The HTMLImageElement to be preloaded.
+   * @param  image - The HTMLImageElement to be preloaded.
    * @example
    */
   const preloadImage = async (image: HTMLImageElement): Promise<void> => {
@@ -58,7 +58,7 @@ const LazyImages = (): JSX.Element | null => {
   /**
    * On intersection.
    *
-   * @param entries - The ObserverEntries.
+   * @param  entries - The ObserverEntries.
    * @example
    */
   const onIntersection = (entries: IntersectionObserverEntry[]): void => {

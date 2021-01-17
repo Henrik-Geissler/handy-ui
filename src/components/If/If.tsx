@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 type IfProps = {
   children?: ReactNode

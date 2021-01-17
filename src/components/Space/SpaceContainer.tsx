@@ -6,9 +6,9 @@ import React from 'react'
 import Space from './Space'
 
 type SpaceContainerProps = {
-  h?: string | number
-  s?: string | number
-  w?: string | number
+  h?: number | string
+  s?: number | string
+  w?: number | string
 }
 const SpaceContainer = ({
   h,

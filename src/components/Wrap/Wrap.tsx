@@ -1,9 +1,9 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
-interface WrapProps {
+type WrapProps = {
   children?: ReactNode
   render?: CallableFunction
 }

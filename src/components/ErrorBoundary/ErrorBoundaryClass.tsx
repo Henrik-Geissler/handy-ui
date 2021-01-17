@@ -1,7 +1,8 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-import { Component, ErrorInfo, ReactNode } from 'react'
+import type { ErrorInfo, ReactNode } from 'react'
+import { Component } from 'react'
 
 type Props = {
   children?: ReactNode

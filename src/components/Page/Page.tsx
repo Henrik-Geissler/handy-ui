@@ -2,7 +2,8 @@
  * Copyright (c) 2021, Henrik Geißler.
  */
 import { SnackbarProvider } from 'notistack'
-import React, { ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import React from 'react'
 
 import BodyWrapper from '../BodyWrapper/BodyWrapper'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundaryClass'

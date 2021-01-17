@@ -3,7 +3,8 @@
  */
 
 import axios from 'axios'
-import React, { ReactNode, useEffect, useState } from 'react'
+import type { ReactNode } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Resource from './Resource'
 

@@ -3,7 +3,7 @@
  */
 import React from 'react'
 
-interface JpgProps {
+type JpgProps = {
   lazy?: boolean
   ratio?: number
   src: string

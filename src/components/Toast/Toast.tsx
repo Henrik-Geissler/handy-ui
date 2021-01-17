@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 
 type ToastProps = {
   message: string
-  variant?: 'default' | 'error' | 'success' | 'warning' | 'info'
+  variant?: 'default' | 'error' | 'info' | 'success' | 'warning'
 }
 const Toast = ({ message, variant }: ToastProps): null => {
   const { enqueueSnackbar } = useSnackbar()
