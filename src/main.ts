@@ -15,7 +15,7 @@ export { default as Toast } from './components/Toast/Toast'
 
 export { default as BodyWrapper } from './components/BodyWrapper/BodyWrapper'
 export { default as ErrorBoundary } from './components/ErrorBoundary/ErrorBoundaryClass'
-export { default as LazyImage } from './components/LazyImage/LazyImage'
+export { default as LazyImages } from './components/LazyImages/LazyImages'
 export { default as RealHeight } from './components/RealHeight/RealHeight'
 export { default as UnlockAudio } from './components/UnlockAudio/UnlockAudio'
 export { default as Wrap } from './components/Wrap/Wrap'

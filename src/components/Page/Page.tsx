@@ -5,10 +5,9 @@ import { SnackbarProvider } from 'notistack'
 import React, { ReactNode } from 'react'
 
 import BodyWrapper from '../BodyWrapper/BodyWrapper'
-import Error from '../Error/Error'
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundaryClass'
-import LazyImage from '../LazyImage/LazyImage'
 import If from '../If/If'
+import LazyImages from '../LazyImages/LazyImages'
 import RealHeight from '../RealHeight/RealHeight'
 import Style from '../Style/Style'
 import Toast from '../Toast/Toast'
@@ -31,13 +30,8 @@ const Page = ({
         <If is={audio}>
           <UnlockAudio />
         </If>
-        <LazyImage />
-        <BodyWrapper scrollable={scrollable || true}>
-          <If>
-            <Error />
-          </If>
-          {children}
-        </BodyWrapper>
+        <LazyImages />
+        <BodyWrapper scrollable={scrollable || true}>{children}</BodyWrapper>
         <Toast message='Hello World' />
         <Style src='css/lazy' />
       </ErrorBoundary>
