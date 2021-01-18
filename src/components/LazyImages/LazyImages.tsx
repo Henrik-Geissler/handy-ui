@@ -40,7 +40,7 @@ const LazyImages = (): JSX.Element | null => {
   const applyImage = (image: HTMLImageElement, source: string) => {
     // Prevent this from being lazy loaded a second time.
     image.classList.add(config.imageLoadedClass)
-    image.classList.add(config.imageTransitionClass)
+    image.onload = () => image.classList.add(config.imageTransitionClass)
     image.src = source
   }
   /**
