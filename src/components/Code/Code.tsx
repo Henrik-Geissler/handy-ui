@@ -1,13 +1,17 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
-import 'prismjs/components/prism-typescript'
-import 'prismjs/components/prism-jsx'
-import 'prismjs/components/prism-tsx'
 
 import Prism from 'prismjs'
 import type { ReactNode } from 'react'
 import React, { useEffect } from 'react'
+
+//and
+
+
+import 'prismjs/components/prism-typescript'
+import 'prismjs/components/prism-jsx'
+import 'prismjs/components/prism-tsx'
 
 type CodeProps = {
   children: ReactNode
