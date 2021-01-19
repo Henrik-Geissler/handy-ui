@@ -256,9 +256,9 @@
     "jsdoc/implements-on-classes": "warn", // Recommended
     "jsdoc/match-description": "warn",
     "jsdoc/newline-after-description": "warn", // Recommended
-    "jsdoc/no-bad-blocks": "warn",
+    "jsdoc/no-bad-blocks": "error",
     "jsdoc/no-defaults": "warn",
-    "jsdoc/no-types": "warn",
+    "jsdoc/no-types": "error",
     "jsdoc/no-undefined-types": "warn", // Recommended
     "jsdoc/require-description": "warn",
     "jsdoc/require-description-complete-sentence": "warn",
