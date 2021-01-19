@@ -21,6 +21,7 @@ const Code = ({ children, lang }: CodeProps): JSX.Element | null => {
   }, [children, lang])
   if (!children) return null
   const JsxString = (component: any, counter = 0): string => {
+    if (!component.type) return component
     const type = component.type.name
     const { props } = component
     let propsString = ''
