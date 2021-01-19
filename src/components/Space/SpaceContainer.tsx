@@ -16,8 +16,8 @@ const SpaceContainer = ({
   w,
 }: SpaceContainerProps): JSX.Element | null => {
   if (s) w = h = s
-  const realWidth = typeof w === 'number' ? `${w}px` : w || '100%'
-  const realHeight = typeof h === 'number' ? `${h}px` : h || '100%'
+  const realWidth = typeof w === 'number' ? `${w}px` : w ?? '100%'
+  const realHeight = typeof h === 'number' ? `${h}px` : h ?? '100%'
 
   return <Space height={realHeight} width={realWidth} />
 }
