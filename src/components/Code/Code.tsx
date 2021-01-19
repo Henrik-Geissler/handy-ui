@@ -17,7 +17,7 @@ type CodeProps = {
 const Code = ({ children, lang }: CodeProps): JSX.Element | null => {
   useEffect(() => {
     Prism.highlightAll()
-  }, [])
+  }, [children, lang])
 
   return (
     <pre
