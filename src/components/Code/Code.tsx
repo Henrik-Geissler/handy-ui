@@ -6,10 +6,11 @@ import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-tsx'
 
 import Prism from 'prismjs'
+import type { ReactNode } from 'react'
 import React, { useEffect } from 'react'
 
 type CodeProps = {
-  children: string
+  children: ReactNode
   lang: string
 }
 const Code = ({ children, lang }: CodeProps): JSX.Element | null => {
@@ -30,7 +31,7 @@ const Code = ({ children, lang }: CodeProps): JSX.Element | null => {
         textShadow: ' 0 1px 0 #fff!important',
       }}
     >
-      <code className={`language-${lang}`}>{children.trim()}</code>
+      <code className={`language-${lang}`}>{(children as string).trim()}</code>
     </pre>
   )
 }
