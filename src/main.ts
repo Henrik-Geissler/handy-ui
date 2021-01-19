@@ -1,6 +1,7 @@
 /**
  * Copyright (c) 2021, Henrik Geißler.
  */
+export { default as Code } from './components/Code/Code'
 export { default as Error } from './components/Error/Error'
 export { default as Fallback } from './components/Error/Error'
 export { default as If } from './components/If/If'

@@ -15,25 +15,19 @@ const Jpg = ({ lazy, ratio, src }: JpgProps): JSX.Element | null => {
     <div
       style={{
         border: 0,
+        height: `${100 / (ratio || 1)}%`,
         margin: 0,
         padding: 0,
         pointerEvents: 'none',
-        position: 'relative',
         width: '100%',
       }}
     >
       <img
         alt={src}
         color='transparent'
+        height='100%'
         src={`/img/${src}.jpg.svg`}
-        style={{
-          border: 0,
-          margin: 0,
-          marginBottom: '-8px',
-          padding: 0,
-          pointerEvents: 'none',
-          position: 'relative',
-        }}
+        style={{ border: 0, margin: 0, padding: 0, pointerEvents: 'none' }}
         width='100%'
       />
       <img
@@ -41,16 +35,15 @@ const Jpg = ({ lazy, ratio, src }: JpgProps): JSX.Element | null => {
         className='js-lazy-image'
         color='transparent'
         data-src={`/img/${src}.jpg`}
+        height='100%'
         src={`/img/${src}.jpg.svg`}
         style={{
           border: 0,
-          bottom: 0,
           left: 0,
           margin: 0,
           padding: 0,
           pointerEvents: 'none',
           position: 'absolute',
-          right: 0,
           top: 0,
         }}
         width='100%'
