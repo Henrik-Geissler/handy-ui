@@ -55,9 +55,10 @@ ${new Array(counter).join(' ')}</${type}>`
         background: '#f9f9fb',
         border: '1px solid #e6e9ec',
         borderRadius: '5px',
+        // boxShadow: 'inset 0 0 10px #e3e7ea, inset 0 0 2px #e3e7ea, 0 1px 0 0 #fff',
         boxShadow:
-          'inset 0 0 10px #e3e7ea, inset 0 0 2px #e3e7ea, 0 1px 0 0 #fff',
-        margin: '0 0 40px',
+          '0px 2px 1px -1px rgba(0,0,0,0.2) inset, 0px 1px 1px 0px rgba(0,0,0,0.14) inset, 0px 1px 3px 0px rgba(0,0,0,0.12) inset',
+        margin: '0',
         padding: '20px 30px',
         textShadow: ' 0 1px 0 #fff!important',
       }}

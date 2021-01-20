@@ -11,6 +11,7 @@ export { default as Page } from './components/Page/PageContainer'
 export { default as Resource } from './components/Resource/ResourceContainer'
 export { default as Space } from './components/Space/SpaceContainer'
 export { default as Style } from './components/Style/Style'
+export { default as Text } from './components/Text/Text'
 export { default as Toast } from './components/Toast/Toast'
 
 // WIP
