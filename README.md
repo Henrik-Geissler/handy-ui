@@ -1,6 +1,6 @@
 # handy-ui
 
-A Collection of useful React Components
+A Collection of useful React Components.
 
 [![npm](https://img.shields.io/npm/v/handy-ui)](https://www.npmjs.com/package/handy-ui)
 [![buildStatus](https://img.shields.io/github/workflow/status/Henrik-Geissler/handy-ui/Test,%20Publish%20&%20Release)](https://www.npmjs.com/package/handy-ui)
@@ -10,7 +10,9 @@ A Collection of useful React Components
 [![size](https://img.shields.io/bundlephobia/min/handy-ui)](https://www.npmjs.com/package/handy-ui)
 [![License](https://img.shields.io/github/license/Henrik-Geissler/handy-ui)](https://github.com/Henrik-Geissler/handy-ui)
 
-Look at some Examples, or directly go to the [Documentation](https://handy-ui-web.vercel.app).
+handy-ui is a collection of all the components I find myself reusing across multiple projects. Create a clean Mobile First User Interface with ease. You are welcome to use them in your projects, or to just get inspired.
+
+Look at some [Examples](https://handy-ui-web.vercel.app), or directly go to the [Documentation](https://handy-ui-web.vercel.app).
 
 ## Installation
 
@@ -20,4 +22,4 @@ yarn add handy-ui
 
 ## Usage
 
-handy-ui is a Collection of Styled Components. Create a rich Mobile First User Interface with ease. Incredibly simplistic and highly customisable.
+Look at some [Examples](https://handy-ui-web.vercel.app), or directly go to the [Documentation](https://handy-ui-web.vercel.app).
