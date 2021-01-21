@@ -43,7 +43,7 @@ const Code = ({ children, lang }: CodeProps): JSX.Element | null => {
 
       return `<${type}${propsString}>
 ${new Array(counter).join(' ')}  ${children}
-${new Array(counter).join(' ')}</${type}>`
+${new Array(counter - 1).join(' ')}</${type}>`
     }
 
     return `<${type}${propsString} />`
@@ -51,6 +51,7 @@ ${new Array(counter).join(' ')}</${type}>`
 
   return (
     <pre
+      className='handy-spacing'
       style={{
         background: '#f9f9fb',
         border: '1px solid #e6e9ec',
@@ -59,7 +60,6 @@ ${new Array(counter).join(' ')}</${type}>`
         boxShadow:
           '0px 2px 1px -1px rgba(0,0,0,0.2) inset, 0px 1px 1px 0px rgba(0,0,0,0.14) inset, 0px 1px 3px 0px rgba(0,0,0,0.12) inset',
         margin: '0',
-        padding: '20px 30px',
         textShadow: ' 0 1px 0 #fff!important',
       }}
     >
