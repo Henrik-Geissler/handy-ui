@@ -3,12 +3,12 @@
  */
 import type { ReactNode } from 'react'
 import React from 'react'
-
+import {Typography} from '@material-ui/core'
 type TextProps = {
   children: ReactNode
 }
 const Text = ({ children }: TextProps): JSX.Element | null => {
-  return <span>{children}</span>
+  return <Typography variant="body1" noWrap>{children}</Typography>
 }
 
 export default Text
